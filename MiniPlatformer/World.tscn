@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://JungleDirtTileSet.tres" type="TileSet" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="World" type="Node"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 320, 32 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65544, 4, 0, 131079, 4, 0, 131080, 4, 0, 196614, 4, 0, 262149, 4, 0, 262153, 4, 0, 327684, 4, 0, 327685, 4, 0, 327689, 4, 0, 327690, 4, 0, 393226, 4, 0, 393227, 4, 0, 393232, 4, 0, 458763, 4, 0, 458764, 4, 0, 458768, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524304, 4, 0, 589840, 4, 0, 655376, 4, 0, 720912, 4, 0 )
+
